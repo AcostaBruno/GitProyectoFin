@@ -1,5 +1,5 @@
 let classifier;
-let imageModelURL = 'Tu_Modelo'; // URL del modelo de Teachable Machine
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/RVCAK64Q7/'; // URL del modelo de Teachable Machine
 let fileInput;
 let label = "";
 let img;
@@ -39,12 +39,12 @@ function gotResult(error, results) {
   textSize(32); // Establece el tamaño de la fuente
   textAlign(CENTER); // Establece la alineación del texto al centro
   text(label, width / 2, height - 50); // Muestra la etiqueta de la clasificación en la parte inferior del canvas
-  let player = { // Objeto que asocia las etiquetas de clasificación con los nombres de los jugadores
-    "frances": "Zinedine Zidane",
-    "ingles": "David Beckham"
+  let player = { // Objeto que asocia las etiquetas de clasificación con los nombres
+    "Class 1": "Calzado formal",
+    "Class 2": "Calzado deportivo"
   }[label];
   textSize(48); // Establece el tamaño de la fuente
-  text(player, width / 2, height / 2); // Muestra el nombre del jugador correspondiente a la etiqueta de clasificación en el centro del canvas
+  text(player, width / 2, height / 2); // Muestra el nombre correspondiente a la etiqueta de clasificación en el centro del canvas
   if (img) {
     image(img, 0, 0, width, height / 2); // Muestra la imagen en la parte superior del canvas
   }
